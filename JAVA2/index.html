@@ -1,1 +1,68 @@
 
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Muzeu i sendeve</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Kalo te përmbajtja</a>
+
+    <header>
+      <p>Programimi në WWW · Zgjidhje reference</p>
+      <h1>Muzeu i sendeve</h1>
+    </header>
+
+    <nav aria-label="Navigimi kryesor">
+      <a href="#celesi">Çelësi</a>
+      <a href="#filxhani">Filxhani</a>
+      <a href="#bileta">Bileta</a>
+    </nav>
+
+    <main id="main">
+      <p class="ekspozita">Ekspozita: <time datetime="2026-10-01">1 tetor 2026</time></p>
+
+      <div class="kartat">
+        <article class="karta" id="celesi">
+          <h2>Çelësi</h2>
+          <figure>
+            <img src="celesi.svg" alt="Një çelës i vjetër prej bakri" width="210" height="210" />
+          </figure>
+          <p>Hapja e një dere mund të jetë fillimi i një historie.</p>
+          <details>
+            <summary>Historia e fshehur</summary>
+            <p>Ky çelës hapte derën e një shtëpie që nuk ekziston më. Askush nuk e di çfarë fshihej brenda.</p>
+          </details>
+        </article>
+
+        <article class="karta" id="filxhani">
+          <h2>Filxhani</h2>
+          <figure>
+            <img src="filxhani.svg" alt="Një filxhan blu me dorezë" width="210" height="210" />
+          </figure>
+          <p>Një filxhan mbledh kujtime nga bisedat.</p>
+          <details>
+            <summary>Historia e fshehur</summary>
+            <p>Çdo mëngjes ky filxhan ka dëgjuar të njëjtat biseda të vogla, dhe i ka ruajtur të gjitha.</p>
+          </details>
+        </article>
+
+        <article class="karta" id="bileta">
+          <h2>Bileta</h2>
+          <figure>
+            <img src="bileta.svg" alt="Një biletë e verdhë me vijë të këputur" width="210" height="210" />
+          </figure>
+          <p>Një udhëtim i shkurtër, një kujtim i gjatë.</p>
+          <details>
+            <summary>Historia e fshehur</summary>
+            <p>Bileta u përdor vetëm një herë, në një udhëtim që nuk ishte planifikuar fare.</p>
+          </details>
+        </article>
+      </div>
+    </main>
+
+    <footer>Sedi</footer>
+  </body>
+</html>
