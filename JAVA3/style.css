@@ -1,1 +1,144 @@
 
+/* ==========================================================
+   Java III · Klinika e CSS: shpëto afishen
+   Variablat (ngjyra, hapësira) jetojnë këtu, në një vend.
+   ========================================================== */
+:root {
+  --ink: #17263c;          /* teksti kryesor */
+  --page: #f3f6fb;         /* sfondi i faqes */
+  --surface: #ffffff;      /* sfondi i kartës */
+  --accent: #166a5f;       /* jeshil: butoni, etiketat */
+  --line: #d5dce8;         /* kufijtë e lehtë */
+  --focus: #0b3d91;        /* unaza e fokusit */
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box; /* width përfshin padding dhe border */
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  color: var(--ink);
+  background: var(--page);
+  line-height: 1.5;
+  overflow-wrap: anywhere; /* asnjë fjalë nuk e shtyn faqen anash */
+}
+
+/* --- Struktura e faqes --- */
+header,
+main,
+footer {
+  padding: var(--space-2);
+}
+
+header {
+  border-bottom: 3px solid var(--accent);
+}
+
+header p {
+  margin: 0;
+}
+
+h1 {
+  margin: var(--space-2) 0;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding-block: var(--space-4);
+}
+
+/* --- Lidhja "Kalo te përmbajtja" --- */
+.skip {
+  position: absolute;
+  left: var(--space-1);
+  top: -4rem;
+  padding: var(--space-1) var(--space-2);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.skip:focus-visible {
+  top: var(--space-1);
+}
+
+/* --- Etiketat: forma + teksti + ikona, jo vetëm ngjyra --- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.tag--free {
+  border-style: solid;     /* kufi i plotë  + shenja ✓ */
+}
+
+.tag--limited {
+  border-style: dashed;    /* kufi me pika  + shenja ! */
+}
+
+.tag--online {
+  border-style: double;    /* kufi i dyfishtë + shenja ◎ */
+  border-width: 4px;
+}
+
+/* --- Përmbajtja e kartës --- */
+.event-title {
+  margin: 0 0 var(--space-2);
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
+}
+
+.event-meta {
+  margin: 0 0 var(--space-2);
+}
+
+.event-text {
+  margin: 0 0 var(--space-2);
+}
+
+/* --- Butoni / lidhja e regjistrimit --- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;            /* kontrast 6.3:1 mbi jeshilin */
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #0f4f47;
+}
+
+/* --- Fokusi i dukshëm me Tab (vetëm për tastierën) --- */
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #fff; /* halo e bardhë: shihet edhe mbi sfonde të errëta */
+}
+
+footer {
+  margin-top: var(--space-4);
+}
