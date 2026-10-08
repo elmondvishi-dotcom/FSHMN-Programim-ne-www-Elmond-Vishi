@@ -1,0 +1,10 @@
+.poster {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  padding: clamp(1rem, 5vw, 2rem);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
