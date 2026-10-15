@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui;
+  margin: 1rem;
+}
+nav a {
+  margin-right: 1rem;
+}
+.cards {
+  /* ishte width: 900px -> shkaktonte overflow ne 360 px */
+  max-width: 100%;
+  padding: 2rem;
+  border: 2px solid navy;
+  display: grid;
+  grid-template-columns: 1fr; /* nje kolone ne ekran te ngushte */
+  gap: 1rem;
+}
+.cards article {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid #999;
+  overflow-wrap: anywhere; /* teksti i gjate nuk del jashte kartes */
+}
+@media (min-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr); /* tri kolona ne 1000 px */
+  }
+}
+/* ishte outline: none -> fokusi nuk shihej */
+a:focus-visible {
+  outline: 3px solid navy;
+  outline-offset: 3px;
+}
