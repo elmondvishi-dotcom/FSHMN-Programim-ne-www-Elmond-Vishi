@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+
+body { font-family: system-ui, sans-serif; margin: 1rem; }
+
+/* Riparimi: hiqet min-width: 700px; paneli ngushtohet sipas ekranit */
+.members {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  border: 2px solid navy;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Fjalet shume te gjata thyhen brenda kutise */
+.members p { overflow-wrap: anywhere; }
+
+/* 360 px: emri, fusha dhe lidhja njera poshte tjetres */
+.profile {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+}
+
+.profile h2,
+.profile p { margin: 0; }
+
+/* Ekran i gjere: tri kolona brenda CDO profili, profilet mbeten tri rreshta */
+@media (min-width: 800px) {
+  .profile {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+}
+
+/* Riparimi i fokusit: Tab e tregon qarte lidhjen aktive */
+a:focus-visible {
+  outline: 3px solid navy;
+  outline-offset: 3px;
+}
