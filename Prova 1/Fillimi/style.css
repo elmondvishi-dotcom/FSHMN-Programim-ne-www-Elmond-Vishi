@@ -6,29 +6,28 @@ body {
   margin: 1rem;
 }
 nav a {
-  margin-right: 1rem;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
 }
 .cards {
-  /* ishte width: 900px -> shkaktonte overflow ne 360 px */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   max-width: 100%;
   padding: 2rem;
   border: 2px solid navy;
-  display: grid;
-  grid-template-columns: 1fr; /* nje kolone ne ekran te ngushte */
-  gap: 1rem;
 }
-.cards article {
+.card {
   min-width: 0;
   padding: 1rem;
   border: 1px solid #999;
-  overflow-wrap: anywhere; /* teksti i gjate nuk del jashte kartes */
+  overflow-wrap: anywhere;
 }
 @media (min-width: 800px) {
   .cards {
-    grid-template-columns: repeat(3, 1fr); /* tri kolona ne 1000 px */
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
-/* ishte outline: none -> fokusi nuk shihej */
 a:focus-visible {
   outline: 3px solid navy;
   outline-offset: 3px;
