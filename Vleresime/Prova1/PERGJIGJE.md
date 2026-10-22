@@ -6,7 +6,7 @@ Gr.3 - Elmond Vishi
 
 Shpjego box-sizing: border-box me width, padding dhe border nga kodi yt.
 
-Pergjigjja ime: Me `* { box-sizing: border-box; }` gjeresia (width) e nje elementi perfshin edhe padding-un dhe border-in. Ne kodin tim `.members` ka `width: 100%`, `padding: 1rem` dhe `border: 2px solid navy`. Me border-box, kutia mbetet gjithsej 100% e gjeresise se prindit, sepse padding dhe border hyjne brenda kesaj vlere. Pa border-box (content-box) gjeresia reale do te ishte 100% + 2rem padding + 4px border, pra paneli do te dilte jashte ekranit ne 360 px dhe do te shkaktonte scroll horizontal.
+Pergjigjja ime: Me *b b gjeresia (width) e nje elementi perfshin edhe padding-un dhe border-in.. Pa border-box (content-box) gjeresia reale do te ishte 100% + 2rem padding + 4px border, pra paneli do te dilte jashte ekranit ne 360 px dhe do te shkaktonte scroll horizontal.
 
 ## P1.8
 

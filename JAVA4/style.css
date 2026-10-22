@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f7f7fb;
+  --surface: #ffffff;
+  --text: #1d1d2b;
+  --muted: #55556a;
+  --accent: #3b3bb3;
+  --border: #d9d9e6;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Lidhja "Kalo te përmbajtja" shfaqet vetëm me fokus nga tastiera */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+.skip:focus {
+  left: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+h1 {
+  margin: 0.25rem 0 1rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  overflow-wrap: anywhere;
+}
+
+/* Menuja fleksibile */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.menu a:hover,
+.menu a[aria-current="page"] {
+  background: var(--accent);
+  color: #fff;
+}
+
+a:focus-visible {
+  outline: 3px solid #f0a500;
+  outline-offset: 2px;
+}
+
+/* Imazh fleksibël */
+.hero img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+/* Grid: 1 kolonë < 600px */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2 kolona nga 600 deri në 899 px */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 3 kolona nga 900 px */
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* Teksti i gjatë thyhet dhe nuk del jashtë kartës; pa lartësi fikse */
+.card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.card p {
+  margin: 0;
+}
+
+.category {
+  align-self: flex-start;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: #e8e8fa;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.time {
+  color: var(--muted);
+}
+
+.card a {
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
