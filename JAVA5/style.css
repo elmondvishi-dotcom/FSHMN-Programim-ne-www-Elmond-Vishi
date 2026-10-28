@@ -1,0 +1,189 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f5f9;
+  --surface: #ffffff;
+  --text: #1c1c28;
+  --muted: #565669;
+  --accent: #2f4fb3;
+  --border: #cfd2e0;
+  --error: #b3261e;
+  --note: #fff6d8;
+  --note-border: #d9a400;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Lidhja "Kalo te përmbajtja" shfaqet vetëm me fokus nga tastiera */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+.skip:focus {
+  left: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+h1 {
+  margin: 0.25rem 0 1rem;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.shenim {
+  background: var(--note);
+  border-left: 4px solid var(--note-border);
+  padding: 0.5rem 0.75rem;
+}
+
+/* Formulari */
+.forma {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.fusha {
+  display: grid;
+  gap: 0.25rem;
+}
+
+label,
+legend {
+  font-weight: 600;
+}
+
+small {
+  color: var(--muted);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  font: inherit;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+}
+
+/* Kufiri i kuq shfaqet vetëm pasi përdoruesi ka prekur fushën */
+input:user-invalid {
+  border-color: var(--error);
+  outline: 1px solid var(--error);
+}
+
+fieldset {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.zgjedhje {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.zgjedhje label {
+  font-weight: 400;
+}
+
+button {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f0a500;
+  outline-offset: 2px;
+}
+
+/* Tabela rrëshqet horizontalisht vetëm brenda kutisë së saj në ekrane të ngushta */
+.tabela {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+}
+
+thead th {
+  background: #e6ebfa;
+}
+
+/* Faqja e pranimit */
+.vlerat {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.vlerat dt {
+  font-weight: 600;
+}
+
+.vlerat dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
